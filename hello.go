@@ -1,9 +1,11 @@
 package main
 
-import(
-	"fmt"
-)
+import "github.com/gin-gonic/gin"
 
-func main(){
-	fmt.Println("hello 世界")
+func main() {
+    r := gin.Default()
+    r.GET("/", func(c *gin.Context) {
+        c.String(200, "Hello, World!")
+    })
+    r.Run() // 在本地监听 8080 端口
 }
